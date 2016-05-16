@@ -5,18 +5,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import facade.AbstractFacade;
-import facade.FilmFacade;
-import model.Film;
+import facade.TipoEstadoFacade;
+import model.TipoEstado;
 
 @Stateless
-public class FilmFacadeEJB extends AbstractFacade<Film> implements FilmFacade {
+public class TipoEstadoFacadeEJB extends AbstractFacade<TipoEstado> implements TipoEstadoFacade {
 	
 	
-	@PersistenceContext(unitName = "sakilaPU")
+	@PersistenceContext(unitName = "eusach")
 	private EntityManager em;
 	
-	public FilmFacadeEJB() {
-		super(Film.class);
+	public TipoEstadoFacadeEJB() {
+		super(TipoEstado.class);
 	}
 
 	@Override

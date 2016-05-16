@@ -13,48 +13,48 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import facade.FilmFacade;
-import model.Film;
+import facade.TipoEstadoFacade;
+import model.TipoEstado;
 
-@Path("/films")
-public class FilmService {
+@Path("/TipoEstados")
+public class TipoEstadoService {
 	
 	@EJB 
-	FilmFacade filmFacadeEJB;
+	TipoEstadoFacade filmFacadeEJB;
 	
-	Logger logger = Logger.getLogger(FilmService.class.getName());
+	Logger logger = Logger.getLogger(TipoEstadoService.class.getName());
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
-	public List<Film> findAll(){
+	public List<TipoEstado> findAll(){
 		return filmFacadeEJB.findAll();
 	}
 	
 	@GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Film find(@PathParam("id") Integer id) {
+    public TipoEstado find(@PathParam("id") Integer id) {
         return filmFacadeEJB.find(id);
     }
 	
 	@POST
     @Consumes({"application/xml", "application/json"})
-    public void create(Film entity) {
+    public void create(TipoEstado entity) {
         filmFacadeEJB.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, Film entity) {
-    	entity.setFilmId(id.intValue());
+    public void edit(@PathParam("id") Integer id, TipoEstado entity) {
+    	entity.setIdTipoEstado(id.intValue());
         filmFacadeEJB.edit(entity);
     }
     
     @GET
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void remove(@PathParam("id") Integer id, Film entity){
+    public void remove(@PathParam("id") Integer id, TipoEstado entity){
     	entity = filmFacadeEJB.find(id);
     	filmFacadeEJB.remove(entity);
     }

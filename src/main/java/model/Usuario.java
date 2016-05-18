@@ -107,8 +107,8 @@ public class Usuario implements Serializable {
 		return this.esAdministrador;
 	}
 
-	/*public void setAdministrador(boolean esAdministrador) {
+	public void setAdministrador(boolean esAdministrador) {
 		this.esAdministrador = esAdministrador;
-	}*/
+	}
 
 }

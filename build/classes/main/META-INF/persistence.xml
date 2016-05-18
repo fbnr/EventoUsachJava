@@ -10,5 +10,6 @@
 		<class>model.Lugar</class>
 		<class>model.UsuarioSeguidos</class>
 		<class>model.Preferencia</class>
+		<class>model.Evento</class>
 	</persistence-unit>
 </persistence>

@@ -11,5 +11,7 @@
 		<class>model.UsuarioSeguidos</class>
 		<class>model.Preferencia</class>
 		<class>model.Evento</class>
+		<class>model.EventoUsuario</class>
+		<class>model.Comentario</class>
 	</persistence-unit>
 </persistence>

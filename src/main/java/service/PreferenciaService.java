@@ -13,45 +13,45 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import facade.UsuarioFacade;
-import model.Usuario;
+import facade.PreferenciaFacade;
+import model.Preferencia;
 
 
-@Path("/usuarios")
-public class UsuarioService {
+@Path("/preferencias")
+public class PreferenciaService {
 	
 	@EJB 
-	UsuarioFacade usuarioFacadeEJB;
+	PreferenciaFacade preferenciaFacadeEJB;
 	
 	//FilmActorFacade filmActorFacadeEJB;
 	
-	Logger logger = Logger.getLogger(UsuarioService.class.getName());
+	Logger logger = Logger.getLogger(PreferenciaService.class.getName());
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
-	public List<Usuario> findAll(){
-		return usuarioFacadeEJB.findAll();
+	public List<Preferencia> findAll(){
+		return preferenciaFacadeEJB.findAll();
 	}
 	
 	@GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Usuario find(@PathParam("id") Integer id) {
-        return usuarioFacadeEJB.find(id);
+    public Preferencia find(@PathParam("id") Integer id) {
+        return preferenciaFacadeEJB.find(id);
     }
 	
 	@POST
     @Consumes({"application/xml", "application/json"})
-    public void create(Usuario entity) {
-		usuarioFacadeEJB.create(entity);
+    public void create(Preferencia entity) {
+		preferenciaFacadeEJB.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, Usuario entity) {
-    	entity.setIdUsuario(id.intValue());
-    	usuarioFacadeEJB.edit(entity);
+    public void edit(@PathParam("id") Integer id, Preferencia entity) {
+    	entity.setIdPreferencia(id.intValue());
+    	preferenciaFacadeEJB.edit(entity);
     }
 	
     /*@GET

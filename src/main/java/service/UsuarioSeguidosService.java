@@ -13,45 +13,45 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import facade.UsuarioFacade;
-import model.Usuario;
+import facade.UsuarioSeguidosFacade;
+import model.UsuarioSeguidos;
 
 
-@Path("/usuarios")
-public class UsuarioService {
+@Path("/usuarioseguidos")
+public class UsuarioSeguidosService {
 	
 	@EJB 
-	UsuarioFacade usuarioFacadeEJB;
+	UsuarioSeguidosFacade usuarioseguidoFacadeEJB;
 	
 	//FilmActorFacade filmActorFacadeEJB;
 	
-	Logger logger = Logger.getLogger(UsuarioService.class.getName());
+	Logger logger = Logger.getLogger(UsuarioSeguidosService.class.getName());
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
-	public List<Usuario> findAll(){
-		return usuarioFacadeEJB.findAll();
+	public List<UsuarioSeguidos> findAll(){
+		return usuarioseguidoFacadeEJB.findAll();
 	}
 	
 	@GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Usuario find(@PathParam("id") Integer id) {
-        return usuarioFacadeEJB.find(id);
+    public UsuarioSeguidos find(@PathParam("id") Integer id) {
+        return usuarioseguidoFacadeEJB.find(id);
     }
 	
 	@POST
     @Consumes({"application/xml", "application/json"})
-    public void create(Usuario entity) {
-		usuarioFacadeEJB.create(entity);
+    public void create(UsuarioSeguidos entity) {
+		usuarioseguidoFacadeEJB.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, Usuario entity) {
+    public void edit(@PathParam("id") Integer id, UsuarioSeguidos entity) {
     	entity.setIdUsuario(id.intValue());
-    	usuarioFacadeEJB.edit(entity);
+    	usuarioseguidoFacadeEJB.edit(entity);
     }
 	
     /*@GET

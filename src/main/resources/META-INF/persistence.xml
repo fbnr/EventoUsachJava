@@ -6,5 +6,9 @@
 		<jta-data-source>jdbc/eusach</jta-data-source>
 		<class>model.Usuario</class>
 		<class>model.TipoEstado</class>
+		<class>model.Tipo</class>
+		<class>model.Lugar</class>
+		<class>model.UsuarioSeguidos</class>
+		<class>model.Preferencia</class>
 	</persistence-unit>
 </persistence>

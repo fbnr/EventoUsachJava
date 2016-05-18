@@ -16,7 +16,7 @@ import javax.ws.rs.Produces;
 import facade.TipoEstadoFacade;
 import model.TipoEstado;
 
-@Path("/TipoEstados")
+@Path("/tipoestados")
 public class TipoEstadoService {
 	
 	@EJB 

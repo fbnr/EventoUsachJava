@@ -13,45 +13,45 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import facade.UsuarioFacade;
-import model.Usuario;
+import facade.TipoFacade;
+import model.Tipo;
 
 
-@Path("/usuarios")
-public class UsuarioService {
+@Path("/tipos")
+public class TipoService {
 	
 	@EJB 
-	UsuarioFacade usuarioFacadeEJB;
+	TipoFacade TipoFacadeEJB;
 	
 	//FilmActorFacade filmActorFacadeEJB;
 	
-	Logger logger = Logger.getLogger(UsuarioService.class.getName());
+	Logger logger = Logger.getLogger(TipoService.class.getName());
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
-	public List<Usuario> findAll(){
-		return usuarioFacadeEJB.findAll();
+	public List<Tipo> findAll(){
+		return TipoFacadeEJB.findAll();
 	}
 	
 	@GET
     @Path("{id}")
     @Produces({"application/xml", "application/json"})
-    public Usuario find(@PathParam("id") Integer id) {
-        return usuarioFacadeEJB.find(id);
+    public Tipo find(@PathParam("id") Integer id) {
+        return TipoFacadeEJB.find(id);
     }
 	
 	@POST
     @Consumes({"application/xml", "application/json"})
-    public void create(Usuario entity) {
-		usuarioFacadeEJB.create(entity);
+    public void create(Tipo entity) {
+		TipoFacadeEJB.create(entity);
     }
 
     @PUT
     @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void edit(@PathParam("id") Integer id, Usuario entity) {
-    	entity.setIdUsuario(id.intValue());
-    	usuarioFacadeEJB.edit(entity);
+    public void edit(@PathParam("id") Integer id, Tipo entity) {
+    	entity.setIdTipo(id.intValue());
+    	TipoFacadeEJB.edit(entity);
     }
 	
     /*@GET

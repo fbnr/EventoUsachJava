@@ -11,7 +11,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="preferencia")
+@Table(name="preferencias")
 @NamedQuery(name="Preferencia.findAll", query="SELECT a FROM Preferencia a")
 public class Preferencia implements Serializable {
 	private static final long serialVersionUID = 1L;

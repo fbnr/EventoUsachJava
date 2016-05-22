@@ -38,9 +38,6 @@ public class Evento implements Serializable {
 	@Column(name="fin_evento", nullable=false)
 	private Timestamp finEvento;
 	
-	@Column(name="fecha_evento", nullable=false)
-	private Timestamp fechaEvento;
-	
 	@Column(name="descripcion_evento", nullable=false, length=200)
 	private String descripcionEvento;
 
@@ -101,14 +98,6 @@ public class Evento implements Serializable {
 
 	public void setFinEvento(Timestamp finEvento) {
 		this.finEvento = finEvento;
-	}
-	
-	public Timestamp getFechaEvento() {
-		return this.fechaEvento;
-	}
-
-	public void setFechaEvento(Timestamp fechaEvento) {
-		this.fechaEvento = fechaEvento;
 	}
 	
 	public String getDescripcionEvento() {

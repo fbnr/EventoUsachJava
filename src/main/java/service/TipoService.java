@@ -23,8 +23,6 @@ public class TipoService {
 	@EJB 
 	TipoFacade TipoFacadeEJB;
 	
-	//FilmActorFacade filmActorFacadeEJB;
-	
 	Logger logger = Logger.getLogger(TipoService.class.getName());
 	
 	@GET
@@ -53,17 +51,5 @@ public class TipoService {
     	entity.setIdTipo(id.intValue());
     	TipoFacadeEJB.edit(entity);
     }
-	
-    /*@GET
-    @Path("delete_actor{id}")
-    @Consumes({"application/xml", "application/json"})
-    public void remove(@PathParam("id") Integer id, Actor entity){
-    	List<FilmActor> l = filmActorFacadeEJB.findList(id);
-    	for(int i = 0; i < l.size() ; i++){
-    		filmActorFacadeEJB.remove(l.get(i));
-    	}
-    	entity = actorFacadeEJB.find(id);
-    	actorFacadeEJB.remove(entity);
-    }*/
     
 }

@@ -20,8 +20,6 @@ public interface TipoFacade {
 	public List<Tipo> findAll();
 
 	public List<Tipo> findRange(int[] range);
-
-	//public List<FilmActor> findListActor(int id);
 	
 	public int count();
 

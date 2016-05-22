@@ -41,7 +41,7 @@ public class Tipo implements Serializable {
 		return this.tipoEvento;
 	}
 
-	public void setTipoEstado(String tipoEvento) {
+	public void setTipoEvento(String tipoEvento) {
 		this.tipoEvento = tipoEvento;
 	}
 	

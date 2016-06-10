@@ -5,13 +5,15 @@ import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+
 
 import facade.LugarFacade;
 import model.Lugar;
@@ -39,6 +41,18 @@ public class LugarService {
     public Lugar find(@PathParam("id") Integer id) {
         return lugarFacadeEJB.find(id);
     }
+	
+	//GET POR COORDENADAS 
+	//SE BUSCA /GPS?latitud=13131&longitud=11212
+	//Se considera un cuadrante de 100m2 
+	@GET
+	@Path("/GPS")
+	@Produces({"application/xml", "application/json"})
+	public List<Lugar> findForGPS(
+			@QueryParam("longitud") float longitud,
+			@QueryParam("latitud") float latitud){
+		return lugarFacadeEJB.findLugarGPS(latitud, longitud);
+	}
 	
 	@POST
     @Consumes({"application/xml", "application/json"})

@@ -24,5 +24,7 @@ public interface LugarFacade {
 	//public List<FilmActor> findListActor(int id);
 	
 	public int count();
+	
+	public List<Lugar> findLugarGPS(float lat, float lon);
 
 }

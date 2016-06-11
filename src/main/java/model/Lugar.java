@@ -2,8 +2,9 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.sql.Timestamp;
+
 import java.util.List;
+import java.util.ArrayList;
 
 
 /**
@@ -12,6 +13,13 @@ import java.util.List;
  */
 @Entity
 @Table(name="lugar")
+
+@NamedQueries({
+	@NamedQuery(name="Lugar.findByGPS", query="SELECT a FROM Lugar a WHERE a.latitud > :latitudAbajo AND a.latitud < :latitudArriba AND a.longitud > :longitudAbajo AND a.longitud < :longitudArriba")
+		
+})
+
+
 @NamedQuery(name="Lugar.findAll", query="SELECT a FROM Lugar a")
 public class Lugar implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -32,6 +40,17 @@ public class Lugar implements Serializable {
 	public Lugar() {
 	}
 
+	public List<Lugar> sacarLugarPorGps(List<Lugar> lugares){
+		List<Lugar> GPS = new ArrayList<Lugar>();
+		for (Lugar Lugar : lugares){
+			int numero = Lugar.getIdLugar();
+			if (numero==3){
+				lugares.remove(Lugar);
+			}
+		}
+		return lugares;
+	}
+	
 	public int getIdLugar() {
 		return this.idLugar;
 	}

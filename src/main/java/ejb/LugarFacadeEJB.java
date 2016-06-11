@@ -41,7 +41,6 @@ public class LugarFacadeEJB extends AbstractFacade<Lugar> implements LugarFacade
 		q.setParameter("longitudArriba", (lon+0.0005));
 		q.setParameter("latitudAbajo", (lat-0.0005));
 		q.setParameter("latitudArriba", (lat+0.0005));
-		q.setParameter("revision", true);
 		List<Lugar> lugares = q.getResultList();
 		return lugares;
 	}

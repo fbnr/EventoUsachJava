@@ -54,16 +54,12 @@ public class EventoUsuarioService {
     	eventoUsuarioFacadeEJB.edit(entity);
     }
 	
-    /*@GET
-    @Path("delete_actor{id}")
+    @DELETE
+    @Path("{id}")
     @Consumes({"application/xml", "application/json"})
-    public void remove(@PathParam("id") Integer id, Actor entity){
-    	List<FilmActor> l = filmActorFacadeEJB.findList(id);
-    	for(int i = 0; i < l.size() ; i++){
-    		filmActorFacadeEJB.remove(l.get(i));
-    	}
-    	entity = actorFacadeEJB.find(id);
-    	actorFacadeEJB.remove(entity);
-    }*/
+    public void remove(@PathParam("id") Integer id, EventoUsuario entity){
+    	entity = eventoUsuarioFacadeEJB.find(id);
+    	eventoUsuarioFacadeEJB.remove(entity);
+    }
     
 }

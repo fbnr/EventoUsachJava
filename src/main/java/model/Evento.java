@@ -40,6 +40,9 @@ public class Evento implements Serializable {
 	
 	@Column(name="descripcion_evento", nullable=false, length=200)
 	private String descripcionEvento;
+	
+	@Column(name="habilitado_")
+	private boolean habilitado_;
 
 	public Evento() {
 	}
@@ -106,6 +109,14 @@ public class Evento implements Serializable {
 
 	public void setDescripcionEvento(String descripcionEvento) {
 		this.descripcionEvento = descripcionEvento;
+	}
+	
+	public boolean getHabilitado() {
+		return this.habilitado_;
+	}
+
+	public void setHabilitado(boolean habilitado_) {
+		this.habilitado_ = habilitado_;
 	}
 	
 }

@@ -20,8 +20,6 @@ public interface EventoUsuarioFacade {
 	public List<EventoUsuario> findAll();
 
 	public List<EventoUsuario> findRange(int[] range);
-
-	//public List<FilmActor> findListActor(int id);
 	
 	public int count();
 

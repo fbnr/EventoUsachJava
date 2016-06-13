@@ -2,8 +2,6 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.util.List;
 
 
 /**
@@ -12,6 +10,11 @@ import java.util.List;
  */
 @Entity
 @Table(name="eventousuario")
+
+@NamedQueries({
+	@NamedQuery(name="EventoUsuario.deleteForId", query="DELETE FROM EventoUsuario a WHERE a.idEventoUsuario = :idEventoUsuario")
+})
+
 @NamedQuery(name="EventoUsuario.findAll", query="SELECT a FROM EventoUsuario a")
 public class EventoUsuario implements Serializable {
 	private static final long serialVersionUID = 1L;

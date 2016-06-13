@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import facade.AbstractFacade;
 import facade.EventoUsuarioFacade;
@@ -24,6 +25,12 @@ public class EventoUsuarioFacadeEJB extends AbstractFacade<EventoUsuario> implem
 	@Override
 	protected EntityManager getEntityManager() {
 		return this.em;
+	}
+	
+	public void eliminarEventoUsuario(Integer id){
+		Query q = em.createNamedQuery("EventoUsuario.deleteForId");
+		q.setParameter("idEventoUsuario", id);
+		q.executeUpdate();	
 	}
 	
 }

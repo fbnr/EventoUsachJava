@@ -12,6 +12,7 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 
 import facade.EventoUsuarioFacade;
 import model.EventoUsuario;
@@ -54,12 +55,12 @@ public class EventoUsuarioService {
     	eventoUsuarioFacadeEJB.edit(entity);
     }
 	
-    @DELETE
-    @Path("{id}")
-    @Consumes({"application/xml", "application/json"})
-    public void remove(@PathParam("id") Integer id, EventoUsuario entity){
-    	entity = eventoUsuarioFacadeEJB.find(id);
-    	eventoUsuarioFacadeEJB.remove(entity);
-    }
+    @GET
+	@Path("/eliminar/{id}")
+    @Produces({"application/xml", "application/json"})
+    public void eliminarGraf(
+    		@PathParam("id") Integer id) {
+       eventoUsuarioFacadeEJB.eliminarEventoUsuario(id);
+    }	
     
 }

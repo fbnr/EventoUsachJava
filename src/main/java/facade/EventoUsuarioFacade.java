@@ -22,5 +22,7 @@ public interface EventoUsuarioFacade {
 	public List<EventoUsuario> findRange(int[] range);
 	
 	public int count();
+	
+	public void eliminarEventoUsuario(Integer id);
 
 }

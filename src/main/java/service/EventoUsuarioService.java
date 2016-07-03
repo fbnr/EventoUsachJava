@@ -54,13 +54,5 @@ public class EventoUsuarioService {
     	entity.setIdEventoUsuario(id.intValue());
     	eventoUsuarioFacadeEJB.edit(entity);
     }
-	
-    @GET
-	@Path("/eliminar/{id}")
-    @Produces({"application/xml", "application/json"})
-    public void eliminarGraf(
-    		@PathParam("id") Integer id) {
-       eventoUsuarioFacadeEJB.eliminarEventoUsuario(id);
-    }	
-    
+	    
 }

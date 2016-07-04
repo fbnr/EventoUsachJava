@@ -66,4 +66,12 @@ public class PreferenciaService {
     	actorFacadeEJB.remove(entity);
     }*/
     
+    @GET
+    @Path("/eliminar/{id}")
+    @Produces({"application/xml", "application/json"})
+    public void eliminarGraf(
+            @PathParam("id") Integer id) {
+       preferenciaFacadeEJB.eliminarPreferencia(id);
+    }
+
 }

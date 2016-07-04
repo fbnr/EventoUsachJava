@@ -25,4 +25,6 @@ public interface PreferenciaFacade {
 	
 	public int count();
 
+	public void eliminarPreferencia(Integer id);
+
 }

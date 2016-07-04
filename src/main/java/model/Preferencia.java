@@ -12,6 +12,11 @@ import java.util.List;
  */
 @Entity
 @Table(name="preferencias")
+
+@NamedQueries({
+	@NamedQuery(name="Preferencia.deleteForId", query="DELETE FROM Preferencia a WHERE a.idPreferencia = :idPreferencia")
+})
+
 @NamedQuery(name="Preferencia.findAll", query="SELECT a FROM Preferencia a")
 public class Preferencia implements Serializable {
 	private static final long serialVersionUID = 1L;
